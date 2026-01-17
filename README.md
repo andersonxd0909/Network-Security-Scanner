@@ -1,30 +1,31 @@
-# 🔍 Python Network Scanner & Banner Grabber
+# 🔍 Network Scanner & Banner Grabber - Python
 
-Este es un escáner de puertos ligero y eficiente desarrollado en **Python**. Está diseñado para realizar auditorías básicas de seguridad, permitiendo identificar puertos abiertos y detectar las versiones de software que se ejecutan en ellos mediante la técnica de **Banner Grabbing**.
+Este es un proyecto de **software** de red desarrollado para el aprendizaje de protocolos de comunicación y **ciberseguridad**. La herramienta permite identificar dispositivos activos y servicios expuestos en una red local mediante el análisis de puertos.
 
----
+> [!CAUTION]
+> **AVISO LEGAL:** Este script es exclusivamente para fines educativos y auditorías de red autorizadas. Realizar escaneos en redes ajenas sin permiso es ilegal. El autor no se hace responsable del uso indebido de esta herramienta.
 
-## 🛠️ ¿Qué es y qué hace?
+## ✨ Características
+- **Escaneo TCP:** Detecta si los puertos están abiertos o cerrados mediante el saludo de tres vías (3-way handshake).
+- **Banner Grabbing:** Intenta capturar la información del software que se ejecuta en el puerto (versión, nombre del servicio).
+- **Timeouts personalizables:** Configurado para evitar bloqueos si el objetivo no responde.
 
-Este software es una herramienta de **Reconocimiento (Footprinting)**. 
-* **Escaneo de Puertos:** Revisa si un servicio (como una web o una base de datos) está escuchando en un puerto específico.
-* **Banner Grabbing:** "Escucha" la presentación del servidor para saber qué software usa (ej. Apache, OpenSSH, etc.).
+## 🛠️ Tecnologías y Conceptos
+- **Lenguaje:** Python 3.
+- **Librería principal:** `socket` (vínculo esencial para comunicaciones en red).
+- **Programación de Redes:** Uso de sockets de flujo (`SOCK_STREAM`) para conexiones TCP confiables.
 
+## 🛡️ ¿Por qué es importante el escaneo de puertos?
+Desde la perspectiva de la ciberseguridad, es fundamental porque:
+1. **Visibilidad:** Permite saber qué servicios están expuestos a internet o a la red interna.
+2. **Hardening:** Ayuda a los administradores a cerrar puertos innecesarios que podrían ser vectores de ataque.
+3. **Gestión de Parches:** El *Banner Grabbing* ayuda a identificar versiones de software antiguas que necesitan actualización.
 
+## 🛠️ Instalación y Requisitos
 
----
+Para ejecutar este escáner, solo necesitas tener **Python 3** instalado (no requiere librerías externas adicionales).
 
-## 🚀 Instalación y Uso
-
-### 1. Requisitos
-Necesitas tener instalado **Python 3.x**. Si no lo tienes, descárgalo aquí: [python.org](https://www.python.org/downloads/).
-
-### 2. Configuración
-Clona este repositorio o descarga el archivo `scanner.py`. Abre el archivo y edita las siguientes líneas con tu objetivo:
-
-Abre tu terminal o CMD y escribe:
-python scanner.py
-
-```python
-objetivo = "192.168.1.1"  # La IP que quieres escanear
-puertos = [22, 80, 443]   # Los puertos que quieres revisar
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/python-network-scanner.git](https://github.com/tu-usuario/python-network-scanner.git)
+   cd python-network-scanner
